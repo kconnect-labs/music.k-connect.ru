@@ -1,0 +1,89 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--theme-site-background, #0a0a0a);
+}
+
+.layout-content {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.layout-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0;
+  will-change: margin-left;
+}
+
+.layout-main--with-sidebar {
+  margin-left: 0;
+}
+
+.layout-main-content {
+  flex: 1;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  width: 100%;
+}
+
+/* Скрываем скроллбар, но оставляем функциональность */
+.layout-main-content {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.layout-main-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+/* Десктоп - сайдбар всегда виден */
+@media (min-width: 1025px) {
+  .layout-content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .layout-main {
+    margin-left: 0 !important;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* Мобильная оптимизация */
+@media (max-width: 1024px) {
+  .layout-main--with-sidebar {
+    margin-left: 0;
+  }
+}
+
+/* Отступ снизу для мобильного плеера */
+@media (max-width: 768px) {
+  .layout-main-content {
+    padding-bottom: 100px;
+  }
+}
+
+/* Оптимизация для производительности */
+@media (prefers-reduced-motion: reduce) {
+  .layout-main {
+    transition: none;
+  }
+}
+

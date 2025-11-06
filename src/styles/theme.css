@@ -1,0 +1,312 @@
+/* CSS переменные для системы тем */
+
+:root {
+  /* Дефолтные значения */
+  --theme-background: rgb(33 33 33);
+  --theme-backdrop-filter: none;
+  --theme-type: default;
+  --theme-site-background: #1a1a1a; /* Фон сайта */
+  --theme-background-full: rgba(15, 15, 15, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  /* Цвета текста */
+  --theme-text-deactive: rgb(120 120 120);
+  --theme-text-primary: rgba(255, 255, 255, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(255, 255, 255, 1);
+  --theme-text-accent: #D0BCFF;
+  --theme-text-error: #f44336;
+  --theme-text-success: #4caf50;
+  --theme-text-warning: #ff9800;
+  --theme-text-info: #2196f3;
+  --main-border-radius: 18px;
+  --small-border-radius: 14px;
+  --large-border-radius: 22px;
+  --avatar-border-radius: 50%;
+  --box-shadow: none;
+  /* Цветовая схема браузера */
+  color-scheme: dark;
+  accent-color: #D0BCFF;
+}
+
+
+/* Принудительные значения для тем */
+[data-theme="default"] {
+  --theme-background: rgb(33 33 33);
+  --theme-backdrop-filter: none;
+  --theme-site-background: #1a1a1a;
+  --theme-background-full: rgba(15, 15, 15, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  --theme-text-primary: rgba(255, 255, 255, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(255, 255, 255, 1);
+  --theme-text-accent: #D0BCFF;
+  --theme-text-error: #f44336;
+  --theme-text-success: #4caf50;
+  --theme-text-warning: #ff9800;
+  --theme-text-info: #2196f3;
+  --main-border-radius: 18px;
+  --small-border-radius: 14px;
+  --large-border-radius: 22px;
+  --avatar-border-radius: 50%;
+}
+
+[data-theme="cube"] {
+  --theme-background: rgb(33 33 33);
+  --theme-backdrop-filter: none;
+  --theme-site-background: #1a1a1a;
+  --theme-background-full: rgba(15, 15, 15, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  --theme-text-primary: rgba(255, 255, 255, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(255, 255, 255, 1);
+  --theme-text-accent: #D0BCFF;
+  --theme-text-error: #f44336;
+  --theme-text-success: #4caf50;
+  --theme-text-warning: #ff9800;
+  --theme-text-info: #2196f3;
+  --main-border-radius: 0px;
+  --small-border-radius: 0px;
+  --large-border-radius: 0px;
+  --avatar-border-radius: 0px;
+}
+
+[data-theme="amoled"] {
+  --theme-background: rgba(0, 0, 0, 1);
+  --theme-backdrop-filter: none;
+  --theme-site-background: #000000;
+  --theme-background-full: rgba(0, 0, 0, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  --theme-text-primary: rgba(255, 255, 255, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(255, 255, 255, 1);
+  --theme-text-accent: #D0BCFF;
+  --theme-text-error: #f44336;
+  --theme-text-success: #4caf50;
+  --theme-text-warning: #ff9800;
+  --theme-text-info: #2196f3;
+  --main-border-radius: 24px;
+  --small-border-radius: 14px;
+  --large-border-radius: 22px;
+}
+
+[data-theme="blur"] {
+  --theme-background: rgba(28, 28, 30, 0.75);
+  --theme-backdrop-filter: blur(20px);
+  --theme-site-background: #141414;
+  --theme-background-full: rgba(15, 15, 15, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  --theme-text-primary: rgba(255, 255, 255, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(255, 255, 255, 1);
+  --theme-text-accent: #D0BCFF;
+  --theme-text-error: #f44336;
+  --theme-text-success: #4caf50;
+  --theme-text-warning: #ff9800;
+  --theme-text-info: #2196f3;
+}
+
+[data-theme="BlessedBlur"] {
+  --theme-background: rgba(15, 15, 15, 0.55);
+  --theme-backdrop-filter: blur(5px) brightness(0.96) contrast(1.11) saturate(1);
+  --theme-site-background: #0a0a0a;
+  --theme-background-full: rgba(10, 10, 10, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  --theme-text-primary: rgba(255, 255, 255, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(255, 255, 255, 1);
+  --theme-text-accent: #D0BCFF;
+  --theme-text-error: #f44336;
+  --theme-text-success: #4caf50;
+  --theme-text-warning: #ff9800;
+  --theme-text-info: #2196f3;
+  --main-border-radius: 24px;
+  --small-border-radius: 18px;
+  --large-border-radius: 32px;
+  --box-shadow: 0 0 0 4px rgba(95, 95, 95, 0.06) inset, 0 1.5px 16px 0 rgba(65, 65, 65, 0.18) inset;
+}
+
+[data-theme="CursedBlur"] {
+  --theme-background: rgba(255, 255, 255, 0.3);
+  --theme-backdrop-filter: blur(5px) brightness(0.96) contrast(1.11) saturate(1);
+  --theme-site-background: #0a0a0a;
+  --theme-background-full: rgba(10, 10, 10, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  --theme-text-primary: rgba(255, 255, 255, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(255, 255, 255, 1);
+  --theme-text-accent: #D0BCFF;
+  --theme-text-error: #f44336;
+  --theme-text-success: #4caf50;
+  --theme-text-warning: #ff9800;
+  --theme-text-info: #2196f3;
+  --main-border-radius: 24px;
+  --small-border-radius: 18px;
+  --large-border-radius: 32px;
+  --box-shadow: 0 0 0 4px rgba(95, 95, 95, 0.06) inset, 0 1.5px 16px 0 rgba(65, 65, 65, 0.18) inset;
+}
+
+/* Белая тема */
+[data-theme="light"] {
+  --theme-background: rgba(255, 255, 255, 1);
+  --theme-backdrop-filter: none;
+  --theme-site-background: #f5f5f5;
+  --theme-background-full: rgba(255, 255, 255, 1);
+  --theme-button-main: #D0BCFF;
+  --theme-main-color: #d0bcff;
+  --theme-text-primary: rgba(0, 0, 0, 1);
+  --theme-text-secondary: rgb(212, 212, 212);
+  --theme-text-disabled: rgba(0, 0, 0, 1);
+  --theme-text-accent: #6750A4;
+  --theme-text-error: #d32f2f;
+  --theme-text-success: #2e7d32;
+  --theme-text-warning: #ed6c02;
+  --theme-text-info: #1976d2;
+  color-scheme: light;
+  accent-color: #6750A4;
+  --main-border-radius: 18px;
+  --small-border-radius: 14px;
+  --large-border-radius: 22px;
+  --avatar-border-radius: 50%;
+}
+
+/* Класс для элементов, которые должны реагировать на изменение темы */
+.theme-aware {
+  background: var(--theme-background) !important;
+  backdrop-filter: var(--theme-backdrop-filter) !important;
+  -webkit-backdrop-filter: var(--theme-backdrop-filter) !important;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Класс для фона сайта */
+.theme-site-background {
+  background: var(--theme-site-background);
+  transition: background 0.3s ease;
+}
+
+/* Класс для body и html */
+body.theme-site-background,
+html.theme-site-background {
+  background: var(--theme-site-background);
+  transition: background 0.3s ease;
+}
+
+/* Утилитарные классы для цветов текста */
+.text-primary {
+  color: var(--theme-text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--theme-text-secondary) !important;
+}
+
+.text-disabled {
+  color: var(--theme-text-disabled) !important;
+}
+
+.text-accent {
+  color: var(--theme-text-accent) !important;
+}
+
+.text-error {
+  color: var(--theme-text-error) !important;
+}
+
+.text-success {
+  color: var(--theme-text-success) !important;
+}
+
+.text-warning {
+  color: var(--theme-text-warning) !important;
+}
+
+.text-info {
+  color: var(--theme-text-info) !important;
+}
+
+/* Классы для карточек */
+.theme-card {
+  background: var(--theme-background) !important;
+  backdrop-filter: var(--theme-backdrop-filter) !important;
+  border-radius: var(--main-border-radius) !important;
+  box-shadow: var(--box-shadow) !important;
+}
+
+/* Классы для кнопок */
+.theme-button {
+  background: var(--theme-background);
+  backdrop-filter: var(--theme-backdrop-filter);
+  border: 1px solid rgba(66, 66, 66, 0.5);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.theme-button:hover {
+  background: var(--theme-background);
+  backdrop-filter: var(--theme-backdrop-filter);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Классы для форм */
+.theme-form {
+  background: var(--theme-background);
+  backdrop-filter: var(--theme-backdrop-filter);
+  border: 1px solid rgba(66, 66, 66, 0.5);
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .theme-card {
+    border-radius: var(--small-border-radius);
+  }
+}
+
+/* Стили для браузерных элементов */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-site-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-main-color);
+  border-radius: var(--small-border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-text-accent);
+}
+
+/* Стили для форм и элементов управления */
+input[type="checkbox"], 
+input[type="radio"], 
+input[type="range"] {
+  accent-color: var(--theme-main-color);
+}
+
+/* Стили для выделения текста */
+::selection {
+  background-color: var(--theme-main-color);
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: var(--theme-main-color);
+  color: #000000;
+}
+
+/* Стили для фокуса элементов */
+:focus-visible {
+  outline: 2px solid var(--theme-main-color);
+  outline-offset: 2px;
+}
+

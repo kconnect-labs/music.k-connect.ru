@@ -1,0 +1,151 @@
+.mobile-player {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0px;
+  /* padding-bottom: calc(12px + env(safe-area-inset-bottom)); */
+}
+
+.mobile-player-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 0px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Обложка */
+.mobile-player-cover {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-player-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.mobile-player-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.7));
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+/* Информация о треке */
+.mobile-player-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.mobile-player-title {
+  color: var(--theme-text-primary, #ffffff);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.mobile-player-artist {
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.7));
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+/* Контролы */
+.mobile-player-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mobile-player-control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-text-primary, #ffffff);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.mobile-player-control-btn--play {
+  width: 48px;
+  height: 48px;
+}
+
+/* Время */
+.mobile-player-time {
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.6));
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* Показываем только на мобильных */
+@media (max-width: 768px) {
+  .mobile-player {
+    display: block;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .mobile-player-time {
+    display: none;
+  }
+
+  .mobile-player-info {
+    max-width: 140px;
+  }
+
+  .mobile-player-content {
+    padding: 10px 12px;
+  }
+
+  .mobile-player-cover {
+    width: 50px;
+    height: 50px;
+  }
+}
+

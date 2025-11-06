@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" />
+
+    <meta name="theme-color" content="#0f0f0f" />
+    <meta name="description" content="Музыкальное приложение от сервиса К-Коннект" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="К-Коннект Music" lang="ru" />
+    
+    <meta property="og:title" content="К-Коннект Music" />
+    <meta property="og:description" content="Музыкальное приложение от сервиса К-Коннект" />
+    <meta property="og:image" content="https://music.k-connect.ru/link.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" content="https://music.k-connect.ru" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="К-Коннект Music" />
+    <meta name="twitter:description" content="Музыкальное приложение от сервиса К-Коннект" />
+    <meta name="twitter:image" content="https://music.k-connect.ru/link.png" />
+    
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icon-152.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="К-Коннект Music" lang="ru" />
+    
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+
+    <title>К-Коннект Music</title>
+
+    <style>
+      body {
+        touch-action: pan-x pan-y;
+        -webkit-touch-callout: none;
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      input, textarea, select {
+        font-size: 16px !important;
+        touch-action: manipulation;
+      }
+      
+      p, h1, h2, h3, h4, h5, h6, span, div, article, section {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+      
+      button, a, input[type="button"], .no-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
+    
+    <script>
+      document.addEventListener('touchmove', function(event) {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+      
+      let lastTap = 0;
+      document.addEventListener('touchend', function(event) {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+        if (tapLength < 300 && tapLength > 0) {
+          event.preventDefault();
+        }
+        lastTap = currentTime;
+      });
+      
+      // Prevent zoom on input focus
+      document.addEventListener('focus', function(e) {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+          // Prevent iOS zoom
+          document.body.style.touchAction = 'manipulation';
+          document.documentElement.style.touchAction = 'manipulation';
+        }
+      }, true);
+    </script>
+  </head>
+  <body>
+    <noscript>Для работы приложения необходим JavaScript</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

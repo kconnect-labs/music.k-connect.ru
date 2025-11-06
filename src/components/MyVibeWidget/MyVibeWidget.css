@@ -1,0 +1,175 @@
+.my-vibe-widget {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background: rgba(28, 28, 30, 0.75);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--main-border-radius, 24px);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: border-color;
+  margin-bottom: 12px;
+}
+
+
+
+
+.my-vibe-widget.has-current-track {
+  padding-bottom: 60px;
+}
+
+.wave-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: var(--main-border-radius, 20px);
+  overflow: hidden;
+}
+
+.wave-canvas {
+  width: calc(100% + 10px);
+  height: calc(100% + 5px);
+  display: block;
+  position: relative;
+  left: -5px;
+}
+
+.static-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  animation: particleFloat ease-in-out infinite alternate;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.my-vibe-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  pointer-events: none;
+}
+
+.my-vibe-title {
+  color: var(--theme-text-primary, #ffffff);
+  font-size: 24px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.3px;
+}
+
+.my-vibe-play-button {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  will-change: transform;
+  pointer-events: auto;
+}
+
+.my-vibe-play-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.my-vibe-play-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(26, 26, 26, 0.3);
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.my-vibe-track-info {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 3;
+  background: var(--theme-background, rgba(28, 28, 30, 0.95));
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border-radius: var(--small-border-radius, 12px);
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.my-vibe-track-name {
+  color: var(--theme-text-primary, #ffffff);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* Мобильная оптимизация */
+@media (max-width: 768px) {
+  .my-vibe-widget {
+    height: 280px;
+  }
+
+  .my-vibe-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .my-vibe-play-button {
+    width: 64px;
+    height: 64px;
+  }
+}
+

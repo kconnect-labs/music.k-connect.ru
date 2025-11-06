@@ -1,0 +1,157 @@
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--main-border-radius, 18px);
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.ui-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Размеры */
+.ui-button--small {
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.ui-button--medium {
+  padding: 14px 24px;
+  font-size: 16px;
+}
+
+.ui-button--large {
+  padding: 18px 32px;
+  font-size: 18px;
+}
+
+/* Варианты */
+.ui-button--primary {
+  background: linear-gradient(135deg, var(--theme-button-main, #D0BCFF) 0%, #C0A8FF 100%);
+  color: #1a1a1a;
+  box-shadow: 
+    0 4px 16px rgba(208, 188, 255, 0.3),
+    0 0 0 0.5px rgba(255, 255, 255, 0.1) inset;
+}
+
+.ui-button--primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #E0CCFF 0%, #D0BCFF 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 24px rgba(208, 188, 255, 0.4),
+    0 0 0 0.5px rgba(255, 255, 255, 0.15) inset;
+}
+
+.ui-button--primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+.ui-button--secondary {
+  background: var(--theme-background, rgba(33, 33, 33, 1));
+  color: var(--theme-text-primary, #ffffff);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: var(--theme-backdrop-filter, none);
+}
+
+.ui-button--secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.ui-button--outline {
+  background: transparent;
+  color: var(--theme-text-primary, #ffffff);
+  border: 1.5px solid var(--theme-button-main, #D0BCFF);
+}
+
+.ui-button--outline:hover:not(:disabled) {
+  background: rgba(208, 188, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.ui-button--ghost {
+  background: transparent;
+  color: var(--theme-text-primary, #ffffff);
+  border: none;
+}
+
+.ui-button--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ui-button--danger {
+  background: rgba(255, 59, 48, 0.15);
+  color: #ff3b30;
+  border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.ui-button--danger:hover:not(:disabled) {
+  background: rgba(255, 59, 48, 0.25);
+  border-color: rgba(255, 59, 48, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Полная ширина */
+.ui-button--full-width {
+  width: 100%;
+}
+
+/* Состояние загрузки */
+.ui-button--loading {
+  pointer-events: none;
+}
+
+.ui-button__spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(26, 26, 26, 0.3);
+  border-top-color: #1a1a1a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  will-change: transform;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ui-button__content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Мобильная оптимизация */
+@media (max-width: 768px) {
+  .ui-button--small {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .ui-button--medium {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  .ui-button--large {
+    padding: 16px 28px;
+    font-size: 17px;
+  }
+}
+

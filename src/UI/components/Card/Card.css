@@ -1,0 +1,51 @@
+.ui-card {
+  background: var(--theme-background, rgba(33, 33, 33, 1));
+  backdrop-filter: var(--theme-backdrop-filter, none);
+  -webkit-backdrop-filter: var(--theme-backdrop-filter, none);
+  border-radius: var(--main-border-radius, 18px);
+  box-shadow: var(--box-shadow, none);
+  transition: all 0.3s ease;
+}
+
+.ui-card--default {
+  background: var(--theme-background, rgba(33, 33, 33, 1));
+}
+
+.ui-card--elevated {
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 0.5px rgba(255, 255, 255, 0.05) inset;
+}
+
+.ui-card--outlined {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Отступы */
+.ui-card--padding-none {
+  padding: 0;
+}
+
+.ui-card--padding-small {
+  padding: 16px;
+}
+
+.ui-card--padding-medium {
+  padding: 24px;
+}
+
+.ui-card--padding-large {
+  padding: 32px;
+}
+
+/* Мобильная оптимизация */
+@media (max-width: 768px) {
+  .ui-card--padding-medium {
+    padding: 20px;
+  }
+
+  .ui-card--padding-large {
+    padding: 24px;
+  }
+}
+

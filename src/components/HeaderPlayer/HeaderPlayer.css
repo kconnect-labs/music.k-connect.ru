@@ -1,0 +1,343 @@
+.header-player {
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-player-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px 0 0;
+  position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Обложка */
+.header-player-cover {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-player-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.header-player-cover-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.7));
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--theme-button-main, #D0BCFF) 0%, #C0A8FF 100%);
+}
+
+/* Overlay с иконкой лайка при наведении */
+.header-player-cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+}
+
+.header-player-cover:hover .header-player-cover-overlay {
+  opacity: 1;
+}
+
+.header-player-like-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.header-player-like-button:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header-player-like-button.liked {
+  color: #ff3b30;
+}
+
+.header-player-like-button.liked:hover {
+  color: #ff3b30;
+  background: rgba(255, 59, 48, 0.2);
+}
+
+.header-player-like-button svg {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-player-like-button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Информация о треке */
+.header-player-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.header-player-title {
+  color: var(--theme-text-primary, #ffffff);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.header-player-artist {
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.7));
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+/* Контролы */
+.header-player-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.header-player-control-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-text-primary, #ffffff);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.header-player-control-btn--play {
+  width: 36px;
+  height: 36px;
+}
+
+/* Прогресс бар - убран из плеера, теперь в хедере */
+
+/* Время */
+.header-player-time {
+  color: var(--theme-text-secondary, rgba(255, 255, 255, 0.6));
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .header-player-content {
+    gap: 8px;
+    padding: 0 4px;
+  }
+
+  .header-player-cover {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header-player-title {
+    font-size: 13px;
+  }
+
+  .header-player-artist {
+    font-size: 11px;
+  }
+
+  .header-player-controls {
+    gap: 4px;
+  }
+
+  .header-player-control-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .header-player-control-btn--play {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header-player-time {
+    font-size: 10px;
+    min-width: 50px;
+  }
+}
+
+/* Громкость */
+.header-player-volume-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.header-player-volume-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-text-primary, #ffffff);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.header-player-volume-slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.1s;
+  pointer-events: none;
+}
+
+.header-player-volume-wrapper:hover .header-player-volume-slider-container {
+  width: 100px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-player-volume-slider {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.header-player-volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--theme-text-primary, #ffffff);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-player-volume-slider::-webkit-slider-thumb:hover {
+  width: 14px;
+  height: 14px;
+}
+
+.header-player-volume-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--theme-text-primary, #ffffff);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-player-volume-slider::-moz-range-thumb:hover {
+  width: 14px;
+  height: 14px;
+}
+
+/* Скрываем плеер в хедере на мобильных */
+@media (max-width: 768px) {
+  .header-player {
+    display: none;
+  }
+}
+
+/* Скрываем громкость на мобильных */
+@media (max-width: 768px) {
+  .header-player-volume-wrapper {
+    display: none;
+  }
+}
+
+/* Очень маленькие экраны - скрываем время и уменьшаем контролы */
+@media (max-width: 480px) {
+  .header-player-time {
+    display: none;
+  }
+
+  .header-player-info {
+    max-width: 120px;
+  }
+
+  .header-player-volume-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+
