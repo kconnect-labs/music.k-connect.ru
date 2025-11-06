@@ -1,4 +1,4 @@
-# K-Connect Music
+# music.k-connect.ru
 
 Музыкальная платформа на базе K-Connect API.
 
@@ -50,4 +50,3 @@ frontend-music/
 ## Поддомен
 
 Проект настроен для работы на поддомене `music.k-connect.ru`.
-
